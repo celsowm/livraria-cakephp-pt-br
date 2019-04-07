@@ -2,9 +2,9 @@
 
 PPT do Curso: https://docs.google.com/presentation/d/1N30RcEOx484jz38Tr6gS3EHC0dBRaTUPN61T50dpcOU/edit?usp=sharing
 
+## Banco de Dados:
 
-# Contém todos os tipos de associações: 
-
+### Contém todos os tipos de associações: 
 
 - hasOne (1..1): Funcionário tem uma Habilitação
 - hasMany (1..*): Editora tem muitos Livros
@@ -12,7 +12,7 @@ PPT do Curso: https://docs.google.com/presentation/d/1N30RcEOx484jz38Tr6gS3EHC0d
 - belongsToMany (*..*): Livros têm muitos Autores e Autores têm muitos Livros.
 
 
-Associações especiais:
+### Associações especiais:
 
 
 - auto Relacionamento: Funcionário tem gerente Gerente (Funcionário).
