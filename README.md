@@ -9,7 +9,7 @@ Este projeto faz parte de um curso de PHP e CakePHP e possui algumas caracterís
  - **Todos os tipos de relacionamentos:** este app foi criado com a tema de livraria com uma intenção proposital, possuir todos os tipos de relacionamento entre tabelas do modelo relacional. Acreditamos que explorando cada um destes relacionamentos, podemos prover exemplos reais para implementação de qualquer sistema em CakePHP 3.
 
  - **Tabelas no singular:** sim! Optamos por utilizar tabelas no singular
-   para evitar utilizar plugins de inflections para o idioma português.
+   para evitar plugins de inflections para o idioma português.
    Além disso, o CakePHP suporta reflexão transparente por homonímia
    (ex.: *tabela autor, entity AutorTable, model AutorTable e controller
    AutorController*).
