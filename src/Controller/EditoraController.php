@@ -46,12 +46,35 @@ class EditoraController extends AppController {
                 $this->Flash->success('Editora salva com sucesso !');
                 $this->redirect(['action'=>'index']);
             }else{
-                $this->Flash->error('Deu merda');
+                $this->Flash->error('Ocorreu um erro!');
             }
             
         }
         
         $this->set(compact('editora'));
+        
+    }
+    
+    public function alterar(int $id){
+        
+        $editora = $this->Editora->get($id);
+        
+        if($this->getRequest()->isPost()){
+            
+            $editora = $this->Editora->patchEntity($editora, $this->getRequest()->getData());
+            
+            if($this->Editora->save($editora)){
+                $this->Flash->success('Editora alterada com sucesso !');
+                $this->redirect(['action'=>'index']);
+            }else{
+                $this->Flash->error('Ocorreu um erro!');
+            }
+            
+        }
+        
+        $this->set(compact('editora'));
+        
+        
         
     }
     
