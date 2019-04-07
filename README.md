@@ -11,7 +11,7 @@ Este projeto faz parte de um curso de PHP e CakePHP e possui algumas caracterís
  - **Tabelas no singular:** sim! Optamos por utilizar tabelas no singular
    para evitar utilizar plugins de inflections para o idioma português.
    Além disso, o CakePHP suporta reflexão transparente por homonímia
-   (ex.: *tabela Autor, entity AutorTable, model AutorTable e controller
+   (ex.: *tabela autor, entity AutorTable, model AutorTable e controller
    AutorController*).
    
  - **HTML escrito por PHP:** para evitar misturar HTML com PHP, utilizamos ao máximo os Helpers do CakePHP para escrita de HTML com o próprio PHP e evitar assim, colocar *<?php* dentro de tags htmls gerando uma confusão de sintaxes e linguagens.
