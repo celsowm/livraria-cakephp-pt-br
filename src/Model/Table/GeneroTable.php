@@ -19,7 +19,7 @@ class GeneroTable extends Table {
         
         $this->hasMany('Livro');
         $this->addBehavior('Tree');
-        
+        $this->setDisplayField('nome');
     }
     
 }

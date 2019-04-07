@@ -28,6 +28,8 @@ class LivroTable extends Table {
         $this->belongsToMany('Pedido')
                 ->setThrough('ItemPedido');
         
+        $this->belongsTo('Genero');
+        
         $this->setDisplayField('titulo');
     }
     

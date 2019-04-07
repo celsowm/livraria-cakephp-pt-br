@@ -7,6 +7,7 @@ echo $this->Form->create($livro);
     echo $this->Form->control('edicao', ['label'=>'Edição']);
     echo $this->Form->control('ano_publicacao', ['label'=>'Ano de Publicação']);
     echo $this->Form->control('editora_id', ['options'=>$editoras]);
+    echo $this->Form->control('genero_id', ['options'=>$generos]);
     foreach(range(0,3) as $i){
         echo $this->Form->control("autores.$i.id", 
                 [

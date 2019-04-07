@@ -24,9 +24,10 @@ class LivroController extends AppController {
     
     public function inserir(){
         
-        $livro    = $this->Livro->newEntity();
-        $editoras = $this->Livro->Editora->find('list');
-        $autores  = $this->Livro->Autor->find('list');
+        $livro       = $this->Livro->newEntity();
+        $editoras    = $this->Livro->Editora->find('list');
+        $autores     = $this->Livro->Autor->find('list');
+        $generos     = $this->Livro->Genero->find('treeList');
         
         if($this->getRequest()->isPost()){
             
@@ -43,7 +44,7 @@ class LivroController extends AppController {
             
         }
         
-        $this->set(compact('livro','editoras','autores'));
+        $this->set(compact('livro','editoras','autores','generos'));
         
     }
     

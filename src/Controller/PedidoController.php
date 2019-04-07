@@ -28,7 +28,7 @@ class PedidoController extends AppController {
 
     public function inserir() {
 
-        $pedido = $this->Pedido->newEntity();
+        $pedido       = $this->Pedido->newEntity();
         $funcionarios = $this->Pedido->Funcionario->find('list');
         $livros       = $this->Pedido->Livro->find('list');
         $clientes     = $this->Pedido->Cliente->find('list');
