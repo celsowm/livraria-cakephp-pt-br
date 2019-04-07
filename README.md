@@ -6,7 +6,7 @@ PPT do Curso: https://docs.google.com/presentation/d/1N30RcEOx484jz38Tr6gS3EHC0d
 
 ![](https://github.com/celsowm/livraria-cakephp-pt-br/blob/master/model/livraria_model.png)
 
-> Follow your heart.
+> Modelo de Banco de Dados usando a notação Crow's Foot.
 
 ### Contém todos os tipos de associações: 
 
