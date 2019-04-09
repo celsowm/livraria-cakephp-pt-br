@@ -38,5 +38,27 @@ class GeneroController extends AppController {
 
         $this->set(compact('generos'));
     }
+    
+    public function inserirFilho(int $parent_id){
+
+        $genero = $this->Genero->newEntity();
+        $genero->parent = $this->Genero->get($parent_id);
+        
+        if($this->getRequest()->isPost()){
+            
+            $genero = $this->Genero->patchEntity($genero, $this->getRequest()->getData());
+            
+            if($this->Genero->save($genero)){
+                $this->Flash->success('Gênero salvo com sucesso !');
+                $this->redirect(['action'=>'index']);
+            }else{
+                $this->Flash->error('Ocorreu um erro!');
+            }
+            
+        }
+ 
+        $this->set(compact('genero'));
+        
+    }
 
 }

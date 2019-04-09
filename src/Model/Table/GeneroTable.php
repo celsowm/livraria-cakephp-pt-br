@@ -20,6 +20,9 @@ class GeneroTable extends Table {
         $this->hasMany('Livro');
         $this->addBehavior('Tree');
         $this->setDisplayField('nome');
+        
+        $this->belongsTo('Parent')
+                ->setClassName('Genero');
     }
     
 }
