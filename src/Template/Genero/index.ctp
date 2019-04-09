@@ -1,31 +1,23 @@
 <?php
 
 echo $this->Html->tag('table');
-echo $this->Html->tableHeaders(['id', 'nome', 'sub gêneros']);
+echo $this->Html->tableHeaders(['id', 'nome', 'ações']);
 
-$lista = [];
-
-function lista($generos, $lista) {
-    
-    foreach ($generos as $genero) {
-        $lista[$genero->id] = $genero;
-        if ($genero->has('children')) {
-            $lista = lista($genero->children, $lista);
-        }
-    }
-    
-    return $lista;
-}
-
-$generos_lista = lista($generos->toArray(), $lista);
-
-foreach ($generos_lista as $genero) {
+foreach ($generos as $id => $genero) {
 
     echo $this->Html->tableCells([
-        $genero->id,
-        str_repeat('>', $genero->level)." ".$genero->nome,
-            //$this->Html->nestedList(array_column($genero->children,'nome'))
+        $id,
+        $genero,
+        $this->Html->link('alterar',['action'=>'alterar', $id]).
+        '&nbsp'.
+        $this->Html->link('remover',['action'=>'remover', $id]).
+        '&nbsp'.
+        $this->Html->link('inserir sub gênero',['action'=>'inserirFilho', $id])
     ]);
 }
 
+echo $this->Html->tag('/table');
 
+echo $this->Paginator->numbers();
+echo $this->Paginator->prev('« Anterior');
+echo $this->Paginator->next('Próximo »');

@@ -33,7 +33,7 @@ class GeneroController extends AppController {
                     });
         });
 
-        //$query   = $table->find('threaded');
+        $query   = $table->find('treeList', ['spacer'=>'> ']);
         $generos = $this->paginate($query);
 
         $this->set(compact('generos'));
