@@ -9,6 +9,7 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\Validation\Validator;
 
 /**
  * Description of EditoraTable
@@ -22,5 +23,15 @@ class EditoraTable extends Table {
         $this->setDisplayField('nome');
         $this->hasMany('Livro')
                 ->setProperty('livros');
+    }
+    
+    public function validationDefault(Validator $validator): Validator {
+        parent::validationDefault($validator);
+        
+        $validator->requirePresence('nome');
+        $validator->requirePresence('website');
+        $validator->url('website', 'Digite uma URL válida');
+        
+        return $validator;
     }
 }
