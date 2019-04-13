@@ -30,6 +30,28 @@ class TesteController extends AppController {
                 ->andWhere(['cpf' => 1654984546549]);
 
 
+        //limit no contain 1
+        $query0 = $editoraTable->find()
+                ->where(['id' => 1])
+                ->contain(['Livro' => function(Query $q) {
+
+                return $q->limit(2);
+            }]);
+
+        //limit no contain 2
+        $query01 = $editoraTable->find()
+                ->formatResults(function ($results) use ($editoraTable) {
+            return $results->map(function ($row) use ($editoraTable) {
+                        $row['livros'] = $editoraTable->Livro->find()
+                                            ->where(['editora_id'=>$row['id']])
+                                            ->limit(5)
+                                            ->toArray();
+                        return $row;
+                    });
+        });
+
+        debug($query01->toArray());
+
         //filtro no lado N apenas com os dados do lado 1
         //query 1
         $query = $editoraTable->find()
@@ -114,7 +136,7 @@ class TesteController extends AppController {
                     return $exp
                             ->gte($total, 11);
                 })
-                ->toArray();
+        ; //->toArray();
 
         $this->viewBuilder()->enableAutoLayout(false);
     }

@@ -53,5 +53,9 @@ class FuncionarioController extends AppController {
 
         $this->set(compact('funcionario'));
     }
+    
+    public function alterar(){
+        
+    }
 
 }
